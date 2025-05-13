@@ -5,17 +5,17 @@ import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 import About from './pages/About';
 import Cart from './pages/Cart';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast, Slide } from 'react-toastify';
 import { motion } from 'framer-motion';
 
 export default function App() {
-  // функция для показа тоста
   const notify = (msg) =>
     toast.success(msg, {
       position: 'top-right',
-      autoClose: 2000,
-      hideProgressBar: true,
       theme: 'dark',
+      transition: Slide,
+      autoClose: 5000,
+      hideProgressBar: false,
     });
 
   return (
@@ -33,14 +33,15 @@ export default function App() {
       <ToastContainer
         position="top-right"
         autoClose={5000}
-        hideProgressBar={false}
         newestOnTop={false}
+        hideProgressBar={false}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
         draggable
         pauseOnHover
         theme="dark"
+        closeButton={false}
       />
     </div>
   );
