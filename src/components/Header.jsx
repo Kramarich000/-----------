@@ -18,15 +18,15 @@ export default function Header() {
       transition={{ duration: 0.6 }}
     >
       <div className="flex gap-10 items-center max-w-6xl mx-auto">
-        <Link to="/">
-          <motion.h1
-            className="header-bg text-emerald-100 p-4"
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            🎵 Vinyl Shop
-          </motion.h1>
-        </Link>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: 'tween', stiffness: 300 }}
+        >
+          <Link className="flex items-center gap-4 justify-center" to="/">
+            <img src="/vite.svg" className="!w-10" />
+            <h1 className="header-bg text-emerald-100 p-4">Vinyl Shop</h1>
+          </Link>
+        </motion.div>
         <nav className="flex gap-4">
           {links.map(({ to, label }) => (
             <Link
